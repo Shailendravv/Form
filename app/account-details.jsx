@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Field } from '@progress/kendo-react-form';
 import { FormInput, FormAutoComplete } from './form-components';
-import { countries } from './data';
+import { countries, states } from './data';
 import {
   firstNameValidator,
   lastNameValidator,
@@ -32,7 +32,6 @@ export const AccountDetails = (
       id={'email'}
       name={'email'}
       label={'Email address'}
-      hint={'Hint: Enter your personal email address.'}
       type={'email'}
       component={FormInput}
       validator={emailValidator}
@@ -43,7 +42,6 @@ export const AccountDetails = (
       id={'countryselected'}
       name={'countryselected'}
       label={'Country / Region'}
-      hint={'Hint: Only European countries'}
       component={FormAutoComplete}
       data={countries}
       validator={requiredValidator}
@@ -53,7 +51,6 @@ export const AccountDetails = (
       id={'street'}
       name={'street'}
       label={'Street address'}
-      hint={'Hint: Enter your street address.'}
       type={'email'}
       component={FormInput}
     />
@@ -62,7 +59,6 @@ export const AccountDetails = (
       id={'city'}
       name={'city'}
       label={'City'}
-      hint={'Hint: Enter your city .'}
       type={'email'}
       component={FormInput}
     />
@@ -71,20 +67,16 @@ export const AccountDetails = (
       id={'stateselected'}
       name={'stateselected'}
       label={'State / Province'}
-      hint={'Hint: Only Us State'}
       component={FormAutoComplete}
-      data={countries}
+      data={states}
       validator={requiredValidator}
     />
     <Field
-      key={'stateselected'}
-      id={'stateselected'}
-      name={'stateselected'}
-      label={'State / Province'}
-      hint={'Hint: Only Us State'}
+      key={'ZIP'}
+      id={'ZIP'}
+      name={'ZIP'}
+      label={'ZIP / Postal'}
       component={FormAutoComplete}
-      data={countries}
-      validator={requiredValidator}
     />
     {/* <Field
       key={'password'}
